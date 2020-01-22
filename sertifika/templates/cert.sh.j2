@@ -1,0 +1,19 @@
+#!/bin/bash
+cert_directory={{ sertifika_dizini }}
+sertifika_istegi={{ sertifika_istegi }}
+
+cert_create ()
+{
+		if [ ! "${cert_directory}" = "${cert_directory#[Hh]}" ] ; then
+			exit
+		elif [ ! "${cert_directory}" = "${cert_directory#[Ee]}" ] ; then
+			openssl genrsa -out ${cert_directory}/${client}.key 2048
+			openssl req -new -key ${cert_directory}/${client}.key -out ${cert_directory}/${client}.csr
+			openssl x509 -req -in ${cert_directory}/${client}.csr -CA ${cert_directory}/rootCA.pem -CAkey ${cert_directory}/rootCA.key -CAcreateserial -out ${cert_directory}/${client}.crt -days 3650 -sha256
+		else
+		fi
+}
+rm -rf ${cert_directory}/*
+openssl genrsa -out ${cert_directory}/rootCA.key 2048
+openssl req -x509 -new -nodes -key ${cert_directory}/rootCA.key -sha256 -days 1024 -out ${cert_directory}/rootCA.pem
+cert_create

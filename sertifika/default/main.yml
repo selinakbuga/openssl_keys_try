@@ -1,0 +1,28 @@
+---
+cert_directory: /home/ahtapotops/sslsertifika
+rootCA_key: rootCA.key
+rootCA_cert: rootCA.pem
+rootCA_csr: rootCA.csr
+rootCA:
+  rootCA_size: 2048
+  country: TR
+  state: Ankara
+  locality: Ankara
+  organization: ULAKBIM
+  organizationalunit: PARDUS
+  commonname: ahtapot.ahtapot.org.tr
+  e-mail:
+  valit_at: 1024d
+client:
+  client_key: deneme.key
+  client_csr: deneme.csr
+  client_crt: deneme.crt
+  client_size: 2048
+  country: "TR"
+  state: "Ankara"
+  locality: "Ankara"
+  organization: "ULAKBIM"
+  organizationalunit: "PARDUS"
+  commonname: "deneme.ahtapot.org.tr"
+  e-mail:
+

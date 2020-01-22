@@ -1,0 +1,17 @@
+---
+- name: install python-openssl
+  apt: 
+    name: python-openssl
+
+- name: ssl dizini olusturuluyor.
+  file:
+    state: directory
+    path: "{{ cert_directory }}"
+    owner: ahtapotops
+    group: ahtapotops
+    mode: 0755
+    recurse: yes
+
+- name: log toplamak için sertifikalar oluşturuluyor.
+  shell: /etc/ansible/roles/sertifika/templates/cert.sh
+  with_items: client

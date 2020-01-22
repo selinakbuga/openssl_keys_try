@@ -1,0 +1,21 @@
+---
+sertifika_dizini: /home/ahtapotops/sertifika
+#log toplamak için sertifika oluşturmak istiyor musunuz?
+sertifika_istegi: E
+#log toplanmak istenen istemcilerin bilgilerini giriniz.
+client:
+   - git.ahtapot.org
+   - elk.ahtapot.org
+
+rootCA_key: rootCA.key
+rootCA_pem: rootCA.pem
+rootCA_csr: rootCA.csr
+rootCA_size: 2048
+rootCA_country: TR
+rootCA_province_name: Ankara
+rootCA_locality: Ankara
+rootCA_organization: ULAKBIM
+rootCA_organizationalunit: PARDUS
+rootCA_commonname: ahtapot.ahtapot.org.tr
+rootCA_email:
+rootCA_valid_at: 1024d
